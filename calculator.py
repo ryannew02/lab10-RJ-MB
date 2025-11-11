@@ -20,12 +20,6 @@ def square_root(a):
 def hypotenuse(a, b):
 	return math.hypot(a, b)
 
-def div(a, b):
-	if a == 0:
-		raise ZeroDivisionError
-	else:
-		return b / a
-
 def log(a, b):
 	if a <= 1 or b <= 0:
 		raise ValueError
