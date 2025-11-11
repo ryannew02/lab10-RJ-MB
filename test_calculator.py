@@ -15,11 +15,20 @@ class TestCalculator(unittest.TestCase):
     # ##########################
 
     ######## Partner 1
-    # def test_multiply(self): # 3 assertions
-    #     fill in code
-
-    # def test_divide(self): # 3 assertions
-    #     fill in code
+    def test_multiply(self): # 3 assertions
+        #testing general Multiplication
+        self.assertEqual(mul(5, 3), 15)
+        #testing Identity property
+        self.assertEqual(mul(1,12), 12)
+        #testing zero property
+        self.assertEqual(mul(0, 12), 0)
+    def test_divide(self): # 3 assertions
+        #testing regular division
+        self.assertAlmostEqual(div(2,9), 4.5)
+        #testing division by 1
+        self.assertEqual(div(1,10), 10)
+        #testing division by larger dividend
+        self.assertAlmostEqual(div(10, 2), .2)
     # ##########################
 
     ######## Partner 2
@@ -38,21 +47,25 @@ class TestCalculator(unittest.TestCase):
     # ##########################
     
     ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+    def test_log_invalid_argument(self): # 1 assertion
+        with self.assertRaises(ValueError):
+            log(0, 5)
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
-
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
+    def test_hypotenuse(self): # 3 assertions
+        #test simple hypotenuse
+        self.assertEqual(hypotenuse(3,4), 5)
+        #test complex hypotenuse
+        self.assertAlmostEqual(hypotenuse(4,4), 5.6568542, places=7)
+        #test 0 case
+        self.assertEqual(hypotenuse(0,4), 4)
+    def test_sqrt(self): # 3 assertions
+        #test for complex square root
+        self.assertAlmostEqual(square_root(24), 4.89897948, places=7)
+        #test for simple square root
+        self.assertEqual(square_root(9), 3)
+        #test for invalid argument
+        with self.assertRaises(ValueError):
+           square_root(-16)
     ##########################
 
 # Do not touch this
