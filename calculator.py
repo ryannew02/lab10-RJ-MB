@@ -1,3 +1,6 @@
+#https://github.com/ryannew02/lab10-RJ-MB.git
+#Partner 1: Ryan Juergens
+#Partner 2: Marcel Bossa
 """
 calculator.py
 - Defines functions used to create a simple calculator
